@@ -1,0 +1,30 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.env
+.DS_Store
+/dist
+/build
+coverage/
+
+# Prisma
+prisma/dev.db
+prisma/*.sqlite
+prisma/migrations/*/migration.sql
+
+# VSCode
+.vscode/
+
+# Logs
+logs
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Others
+*.local
+*.env.*.local
