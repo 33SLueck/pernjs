@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { PrismaClient } from '@prisma/client';
 import router from './routes/BooksRoutes.js';
+import reviewsRouter from './routes/ReviewsRoutes.js';
 dotenv.config();
 
 const app = express();
@@ -14,6 +15,8 @@ app.get("/", (req, res) => {
     res.send("Hello from Express!");
 });
 app.use("/api/v1/", router);
+app.use("/api/v1/reviews", reviewsRouter);
+app.use("/api/v1/reviews", reviewsRouter);
 app.listen(port, () => {
     console.log("Server is running...");
 })

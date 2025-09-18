@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
-import Reviews from "../Reviews";
+import Reviews from "../components/Reviews.jsx";
 
 const BookDetails = () => {
   const { id } = useParams();
