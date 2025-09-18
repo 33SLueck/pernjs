@@ -16,7 +16,7 @@ router.get("/:id", async (req, res) => {
     if (!id) {
         return res.status(400).json({error:"Id fehlt oder unggültig" });
     }
-    const book = await prisma.books.findUnique({where: { id }});
+    const book = await prisma.books.findUnique({where: { id }, include: {reviews:true}});
     if (!book) {
         return res.status(404).json({error:"Buch nicht gefunden" });
     }

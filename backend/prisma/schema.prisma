@@ -20,8 +20,18 @@ model Books {
   isbn    String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  review Reviews[]
 }
 
+model Reviews {
+  id  Int @id @default(autoincrement())
+  text String
+  rating Int
+  bookId Int //foreign key
+  book Books @relation(fields: [bookId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
 enum Genre{
   SCIENCE_FICTION
   FANTASY
